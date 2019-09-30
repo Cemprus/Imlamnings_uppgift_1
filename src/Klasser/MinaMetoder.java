@@ -2,28 +2,20 @@ package Klasser;
 
 import javax.swing.*;
 
-public class MinaMetoder {
+public class MinaMetoder implements Meals {
     private static Animal[] createHealthyPetsAnimals() {
-        return new Animal[]{new Animal("Sixten", Animal.animalType.DOG, 5),
+        return new Animal[]{
+                new Animal("Sixten", Animal.animalType.DOG, 5),
                 new Animal("Dogge", Animal.animalType.DOG, 10),
                 new Animal("Venus", Animal.animalType.CAT, 5),
                 new Animal("Ove", Animal.animalType.CAT, 3),
-                new Animal("Hypno", Animal.animalType.WORM, 1)};
+                new Animal("Hypno", Animal.animalType.WORM, 1)
+        };
     }
 
     private static String getMessage(Animal[] animals, String svar) {
         String s = String.format("%s%s%d%s", Animal.getAnimal(animals, svar).getName(), " ska få ", Animal.getAnimal(animals, svar).calcPortion(), " gramm av ");
-        switch (Animal.getAnimal(animals, svar).getType()) {
-            case WORM:
-                s += "ormpellets";
-                break;
-            case DOG:
-                s += "hundfoder";
-                break;
-            case CAT:
-                s += "kattfoder";
-                break;
-        }
+        s += Meals.mealType(Animal.getAnimal(animals, svar));
         return s;
     }
 
