@@ -23,6 +23,15 @@ public class Animal implements Meals {
         this.weight = weight;
     }
 
+    static Animal getAnimal(Animal[] animals, String name) {
+        for (Animal animal : animals) {
+            if (animal.getName().toUpperCase().equals(name.toUpperCase())) {
+                return animal;
+            }
+        }
+        return null;
+    }
+
     @Override
     public int calcPortion() {
         switch (this.getType()) {

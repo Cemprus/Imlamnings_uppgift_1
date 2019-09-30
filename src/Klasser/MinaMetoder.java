@@ -11,18 +11,9 @@ public class MinaMetoder {
                 new Animal("Hypno", Animal.animalType.WORM, 1)};
     }
 
-    private static Animal getAnimal(Animal[] animals, String name) {
-        for (Animal animal : animals) {
-            if (animal.getName().toUpperCase().equals(name.toUpperCase())) {
-                return animal;
-            }
-        }
-        return null;
-    }
-
     private static String getMessage(Animal[] animals, String svar) {
-        String s = String.format("%s%s%d%s", getAnimal(animals, svar).getName(), " ska få ", getAnimal(animals, svar).calcPortion(), " gramm av ");
-        switch (getAnimal(animals, svar).getType()) {
+        String s = String.format("%s%s%d%s", Animal.getAnimal(animals, svar).getName(), " ska få ", Animal.getAnimal(animals, svar).calcPortion(), " gramm av ");
+        switch (Animal.getAnimal(animals, svar).getType()) {
             case WORM:
                 s += "ormpellets";
                 break;
