@@ -14,7 +14,8 @@ public class MinaMetoder implements AnimalMeals {
     }
 
     private static String getMessage(Animal[] animals, String svar) {
-        return String.format("%s%s%d%s%s", Animal.getAnimal(animals, svar).getName(), " ska få ", Animal.getAnimal(animals, svar).calcPortion(), " gramm av ", Animal.getAnimal(animals, svar).getMealType());
+        Animal animal = Animal.getAnimal(animals, svar);
+        return String.format("%s%s%d%s%s", animal.getName(), " ska få ", animal.calcPortion(), " gramm av ", animal.getMealType());
     }
 
     public static void CalcMealsForHealthyPets() {
