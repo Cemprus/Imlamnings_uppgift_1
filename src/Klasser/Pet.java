@@ -13,7 +13,7 @@ public class Pet extends Animal implements PetMeals {
     animalType getType() { return type; }
     public void setType(animalType type) { this.type = type; }
 
-    static Pet getPetInArray(Pet[] pets, String name) {
+    public static Pet getPetInArray(Pet[] pets, String name) {
         for (Pet pet : pets) {
             if (pet.getName().toUpperCase().equals(name.toUpperCase())) {
                 return pet;
@@ -22,7 +22,7 @@ public class Pet extends Animal implements PetMeals {
         return null;
     }
 
-    static Pet[] createHealthyPetsAnimals() {
+    public static Pet[] createHealthyPetsAnimals() {
         return new Pet[]{
                 new Pet("Sixten", animalType.DOG, 5),
                 new Pet("Dogge", animalType.DOG, 10),
