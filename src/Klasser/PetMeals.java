@@ -1,7 +1,7 @@
 package Klasser;
 
-public interface AnimalMeals {
-    enum animalType {
+public interface PetMeals {
+    enum animalType {                  //Enums
             CAT("kattfoder"),
             DOG("hundfoder"),
             WORM( "ormpellets");
@@ -11,5 +11,6 @@ public interface AnimalMeals {
         }
     }
 
-    default int calcPortion(){return -1;};
+    int calcPortion();
+    String getMealType();
 }

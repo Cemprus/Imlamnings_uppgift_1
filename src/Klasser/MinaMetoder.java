@@ -2,33 +2,33 @@ package Klasser;
 
 import javax.swing.*;
 
-public class MinaMetoder implements AnimalMeals {
-    private static Animal[] createHealthyPetsAnimals() {
-        return new Animal[]{
-                new Animal("Sixten", animalType.DOG, 5),
-                new Animal("Dogge", animalType.DOG, 10),
-                new Animal("Venus", animalType.CAT, 5),
-                new Animal("Ove", animalType.CAT, 3),
-                new Animal("Hypno", animalType.WORM, 1)
-        };
-    }
-
-    private static String getMessage(Animal[] animals, String svar) {
-        Animal animal = Animal.getAnimal(animals, svar);
-        return String.format("%s%s%d%s%s", animal.getName(), " ska få ", animal.calcPortion(), " gramm av ", animal.getMealType());
-    }
-
+public class MinaMetoder {
     public static void CalcMealsForHealthyPets() {
+        String namn;
+        String svar = "";
+        Pet[] pets;
+        Pet pet = null;
+
         while (true) {
+            pets = Pet.createHealthyPetsAnimals();
+            namn = JOptionPane.showInputDialog("Vilket djur ska få mat?");
+
             try {
-                Animal[] animals = MinaMetoder.createHealthyPetsAnimals();
-                JOptionPane.showMessageDialog(null, MinaMetoder.getMessage(animals, JOptionPane.showInputDialog("Vilket djur ska få mat?")));
-                int returnValue = JOptionPane.showConfirmDialog(null, "Sluta programmet?", "Slut?", JOptionPane.YES_NO_OPTION);
-                if (returnValue == JOptionPane.YES_OPTION) {
-                    System.exit(0);
-                }
+                pet = Pet.getPetInArray(pets, namn);
+                svar = String.format("%s%s%d%s%s", pet.getName(), " ska få ", pet.calcPortion(), " gramm av ", pet.getMealType());
+            } catch (NullPointerException e) {
+                JOptionPane.showMessageDialog(null, "Det gick inte att finna djuren med namnet " + namn, "FEL!", JOptionPane.ERROR_MESSAGE);
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Något gick fel! \nFörsök igen!", "FEL!", JOptionPane.ERROR_MESSAGE);
+            }
+
+            if (pet != null) {
+                JOptionPane.showMessageDialog(null, svar);
+            }
+
+            int returnValue = JOptionPane.showConfirmDialog(null, "Sluta programmet?", "Slut?", JOptionPane.YES_NO_OPTION);
+            if (returnValue == JOptionPane.YES_OPTION) {
+                System.exit(0);
             }
         }
     }
