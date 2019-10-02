@@ -1,7 +1,6 @@
 package Klasser;
 
-public class Animal implements Meals {
-    public enum animalType {CAT, DOG, WORM}
+public class Animal implements AnimalMeals {
     private String name;
     private animalType type;
     private int weight;
@@ -15,6 +14,8 @@ public class Animal implements Meals {
 
     animalType getType() { return type; }
     public void setType(animalType type) { this.type = type; }
+
+    String getMealType() { return type.mealType; }
 
     public Animal() {}
     Animal(String name, animalType type, int weight) {
