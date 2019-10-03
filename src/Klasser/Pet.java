@@ -28,7 +28,7 @@ public class Pet extends Animal implements PetMeals {
                 new Pet("Dogge", animalType.DOG, 10),
                 new Pet("Venus", animalType.CAT, 5),
                 new Pet("Ove", animalType.CAT, 3),
-                new Pet("Hypno", animalType.WORM, 1)
+                new Pet("Hypno", animalType.SNAKE, 1)
         };
     }
 
@@ -40,7 +40,7 @@ public class Pet extends Animal implements PetMeals {
                 return (this.getWeight()*1000/100);
             case CAT:
                 return (this.getWeight()*1000/150);
-            case WORM:
+            case SNAKE:
                 return 20;
         }
         return -1;

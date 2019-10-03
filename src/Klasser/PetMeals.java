@@ -4,7 +4,7 @@ public interface PetMeals {
     enum animalType {                  //Enums
             CAT("kattfoder"),
             DOG("hundfoder"),
-            WORM( "ormpellets");
+            SNAKE( "ormpellets");
         public final String mealType;
         animalType(String mealType) {
             this.mealType = mealType;
