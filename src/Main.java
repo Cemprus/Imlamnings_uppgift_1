@@ -15,7 +15,7 @@ public class Main {
         }
 
         while (true) {
-            namn = JOptionPane.showInputDialog("Vilket djur ska få mat? \n   Det finns djur med följande namn registrerad på håtellet\n   "+regPets);
+            namn = JOptionPane.showInputDialog("Vilket djur ska få mat? \n   Det finns djur med följande namn registrerad på hotellet\n   "+regPets);
 
             if (namn == null) {
                 JOptionPane.showMessageDialog(null, "Du har valt att avbryta programmet!\n Hej då!");
