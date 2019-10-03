@@ -5,7 +5,9 @@ public interface IPetMeals {
             CAT("kattfoder"),
             DOG("hundfoder"),
             SNAKE( "ormpellets");
+
         public final String mealType;
+
         animalType(String mealType) {
             this.mealType = mealType;
         }
