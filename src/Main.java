@@ -16,6 +16,12 @@ public class Main {
 
         while (true) {
             namn = JOptionPane.showInputDialog("Vilket djur ska få mat? \n   Det finns djur med följande namn registrerad på håtellet\n   "+regPets);
+
+            if (namn == null) {
+                JOptionPane.showMessageDialog(null, "Du har valt att avbryta programmet!\n Hej då!");
+                System.exit(0);
+            }
+
             try {
                 pet = Pet.getPetInArray(pets, namn);
                 svar = String.format("%s%d%s", pet.getName() + " ska få ", pet.calcPortion(), " gramm av " + pet.getMealType());
@@ -26,14 +32,10 @@ public class Main {
                 JOptionPane.showMessageDialog(null, "Något gick fel! \nFörsök igen!", "FEL!", JOptionPane.ERROR_MESSAGE);
             }
 
-            slut();
-        }
-    }
-
-    static void slut() {
-        int returnValue = JOptionPane.showConfirmDialog(null, "Sluta programmet?", "Slut?", JOptionPane.YES_NO_OPTION);
-        if (returnValue == JOptionPane.YES_OPTION) {
-            System.exit(0);
+            int returnValue = JOptionPane.showConfirmDialog(null, "Sluta programmet?", "Slut?", JOptionPane.YES_NO_OPTION);
+            if (returnValue == JOptionPane.YES_OPTION) {
+                System.exit(0);
+            }
         }
     }
 }
