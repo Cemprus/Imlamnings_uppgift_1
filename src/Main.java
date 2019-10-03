@@ -24,16 +24,16 @@ public class Main {
 
             try {
                 pet = Pet.getPetInArray(pets, namn);
-                svar = String.format("%s%d%s", pet.getName() + " ska få ", pet.calcPortion(), " gramm av " + pet.getMealType());
+                svar = String.format("%s%d%s", pet + " ska få ", pet.calcPortion(), " gramm av " + pet.getMealType());
                 JOptionPane.showMessageDialog(null, svar);
             } catch (NullPointerException e) {
-                JOptionPane.showMessageDialog(null, "Det gick inte att finna djuren med namnet \"" + namn+"\"! \nDet finns bara djur med följande namn: " + regPets, "FEL!", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Det gick inte att finna djuren med namnet \"" + namn + "\"! \nDet finns bara djur med följande namn: " + regPets, "FEL!", JOptionPane.ERROR_MESSAGE);
                 continue;
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Något gick fel! \nFörsök igen!", "FEL!", JOptionPane.ERROR_MESSAGE);
                 continue;
             }
-            
+
             if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, "Sluta programmet?", "Slut?", JOptionPane.YES_NO_OPTION)) {
                 System.exit(0);
             }

@@ -50,4 +50,9 @@ public class Pet extends Animal implements IPetMeals {
     public String getMealType() {
         return type.mealType;
     }
+
+    @Override
+    public String toString() {
+        return getName();
+    }
 }
