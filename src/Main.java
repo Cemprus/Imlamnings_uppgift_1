@@ -33,9 +33,8 @@ public class Main {
                 JOptionPane.showMessageDialog(null, "Något gick fel! \nFörsök igen!", "FEL!", JOptionPane.ERROR_MESSAGE);
                 continue;
             }
-
-            int returnValue = JOptionPane.showConfirmDialog(null, "Sluta programmet?", "Slut?", JOptionPane.YES_NO_OPTION);
-            if (returnValue == JOptionPane.YES_OPTION) {
+            
+            if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, "Sluta programmet?", "Slut?", JOptionPane.YES_NO_OPTION)) {
                 System.exit(0);
             }
         }
