@@ -11,7 +11,7 @@ public class Main {
         Pet pet;
 
         for (Pet p: pets) {
-            regPets += p.getName()+", ";
+            regPets += p+", ";
         }
 
         while (true) {
