@@ -4,9 +4,7 @@ import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
-        String namn;
-        String svar;
-        String regPets = "";
+        String namn, svar, regPets = "";
         Pet[] pets = Pet.createHealthyPetsAnimals();
         Pet pet;
 
