@@ -21,7 +21,6 @@ public class Main {
                 svar = String.format("%s%d%s", pet.getName() + " ska få ", pet.calcPortion(), " gramm av " + pet.getMealType());
                 JOptionPane.showMessageDialog(null, svar);
             } catch (NullPointerException e) {
-
                 JOptionPane.showMessageDialog(null, "Det gick inte att finna djuren med namnet \"" + namn+"\"! \nDet finns bara djur med följande namn: " + regPets, "FEL!", JOptionPane.ERROR_MESSAGE);
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Något gick fel! \nFörsök igen!", "FEL!", JOptionPane.ERROR_MESSAGE);
