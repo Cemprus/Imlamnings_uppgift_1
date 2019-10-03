@@ -9,7 +9,7 @@ public class Main {
         Pet pet;
 
         for (Pet p: pets) {
-            regPets += p+", ";
+            regPets += p + ", ";
         }
 
         while (true) {
