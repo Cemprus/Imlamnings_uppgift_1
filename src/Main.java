@@ -5,7 +5,7 @@ import javax.swing.*;
 public class Main {
     public static void main(String[] args) {
         String namn;
-        String svar;
+        String svar = "";
         Pet[] pets = Pet.createHealthyPetsAnimals();
         Pet pet;
 
@@ -17,7 +17,10 @@ public class Main {
                 svar = String.format("%s%d%s", pet.getName() + " ska få ", pet.calcPortion(), " gramm av " + pet.getMealType());
                 JOptionPane.showMessageDialog(null, svar);
             } catch (NullPointerException e) {
-                JOptionPane.showMessageDialog(null, "Det gick inte att finna djuren med namnet \"" + namn+"\"!", "FEL!", JOptionPane.ERROR_MESSAGE);
+                for (Pet p: pets) {
+                    svar += p.getName()+", ";
+                }
+                JOptionPane.showMessageDialog(null, "Det gick inte att finna djuren med namnet \"" + namn+"\"! \nDet finns bara djur med följande namn: " + svar, "FEL!", JOptionPane.ERROR_MESSAGE);
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Något gick fel! \nFörsök igen!", "FEL!", JOptionPane.ERROR_MESSAGE);
             }
