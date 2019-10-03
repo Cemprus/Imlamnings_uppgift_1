@@ -1,6 +1,6 @@
 package Klasser;
 
-public interface PetMeals {
+public interface IPetMeals {
     enum animalType {                  //Enums
             CAT("kattfoder"),
             DOG("hundfoder"),

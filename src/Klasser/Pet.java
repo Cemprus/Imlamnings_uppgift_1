@@ -1,6 +1,6 @@
 package Klasser;
 
-public class Pet extends Animal implements PetMeals {
+public class Pet extends Animal implements IPetMeals {
     private animalType type;
 
 
